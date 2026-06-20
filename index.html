@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harshita Vadlamudi — Software Developer</title>
+<meta name="description" content="Portfolio of Harshita Vadlamudi, a software developer focused on backend systems, Java, Python, and cloud-ready applications.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0E1620;
+    --panel: #141F2B;
+    --panel-2: #182636;
+    --text: #EDEFEA;
+    --muted: #8FA0AC;
+    --amber: #E8A33D;
+    --amber-dim: rgba(232,163,61,0.35);
+    --teal: #4FB3A9;
+    --border: #233244;
+    --maxw: 880px;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+    *, *::before, *::after{ animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+  }
+
+  body{
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'IBM Plex Sans', Arial, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a{ color: var(--amber); text-decoration: none; }
+  a:hover{ text-decoration: underline; }
+
+  :focus-visible{
+    outline: 2px solid var(--amber);
+    outline-offset: 3px;
+  }
+
+  .skip-link{
+    position: absolute; left: -9999px; top: 0;
+    background: var(--amber); color: #14202b; padding: 8px 14px; z-index: 200;
+    font-family: 'IBM Plex Mono', monospace; font-size: 13px;
+  }
+  .skip-link:focus{ left: 12px; top: 12px; }
+
+  .wrap{
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ---------- NAV ---------- */
+  header.nav{
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(14,22,32,0.88);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner{
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-mark{
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0.02em;
+    color: var(--text);
+  }
+  .nav-mark span{ color: var(--amber); }
+  .nav-links{
+    display: flex; gap: 28px;
+    list-style: none; margin: 0; padding: 0;
+  }
+  .nav-links a{
+    color: var(--muted);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .nav-links a:hover{ color: var(--amber); text-decoration: none; }
+  .nav-toggle{
+    display: none;
+    background: none; border: 1px solid var(--border); border-radius: 4px;
+    color: var(--text); width: 38px; height: 38px;
+    font-size: 18px; cursor: pointer;
+  }
+
+  @media (max-width: 640px){
+    .nav-links{
+      position: absolute; top: 100%; left: 0; right: 0;
+      flex-direction: column; gap: 0;
+      background: var(--panel);
+      border-bottom: 1px solid var(--border);
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.25s ease;
+    }
+    .nav-links.open{ max-height: 320px; }
+    .nav-links a{
+      display: block; padding: 14px 24px;
+      border-top: 1px solid var(--border);
+    }
+    .nav-toggle{ display: inline-flex; align-items: center; justify-content: center; }
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position: relative;
+    overflow: hidden;
+    padding: 72px 0 56px;
+    border-bottom: 1px solid var(--border);
+  }
+  .hero-schematic{
+    position: absolute;
+    top: 0; right: -60px;
+    width: 480px; height: 480px;
+    opacity: 0.16;
+    pointer-events: none;
+  }
+  @media (max-width: 700px){
+    .hero-schematic{ opacity: 0.10; width: 320px; height: 320px; }
+  }
+  .hero-inner{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 40px;
+    align-items: center;
+  }
+  @media (max-width: 700px){
+    .hero-inner{ grid-template-columns: 1fr; }
+    .hero-chip{ order: -1; margin-bottom: 8px; }
+  }
+  .eyebrow{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--amber);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 18px;
+  }
+  .eyebrow::before{
+    content: "";
+    width: 7px; height: 7px;
+    background: var(--amber);
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .hero h1{
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: clamp(34px, 5.5vw, 52px);
+    line-height: 1.08;
+    margin: 0 0 14px;
+    letter-spacing: -0.01em;
+  }
+  .hero .role{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 16px;
+    color: var(--teal);
+    margin: 0 0 22px;
+  }
+  .caret{
+    display: inline-block;
+    width: 9px; height: 18px;
+    background: var(--teal);
+    margin-left: 4px;
+    vertical-align: -3px;
+    animation: blink 1.1s steps(1) infinite;
+  }
+  @keyframes blink{ 50%{ opacity: 0; } }
+
+  .hero p.lede{
+    color: var(--muted);
+    max-width: 520px;
+    font-size: 16px;
+    margin: 0 0 28px;
+  }
+  .chip-row{
+    display: flex; flex-wrap: wrap; gap: 10px 18px;
+    margin-bottom: 30px;
+  }
+  .contact-chip{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--muted);
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .contact-chip a{ color: var(--text); }
+  .contact-chip a:hover{ color: var(--amber); }
+
+  .btn-row{ display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.03em;
+    padding: 12px 20px;
+    border-radius: 4px;
+    border: 1px solid var(--amber);
+    color: var(--amber);
+    display: inline-flex; align-items: center; gap: 8px;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .btn:hover{
+    background: var(--amber);
+    color: #14202b;
+    text-decoration: none;
+  }
+  .btn.solid{
+    background: var(--amber);
+    color: #14202b;
+  }
+  .btn.solid:hover{
+    background: transparent;
+    color: var(--amber);
+  }
+
+  /* hero chip / monogram */
+  .hero-chip{
+    width: 140px; height: 140px;
+    border: 1.5px solid var(--amber-dim);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+    background: var(--panel);
+  }
+  .hero-chip span{
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    color: var(--text);
+  }
+  .hero-chip .pin{
+    position: absolute;
+    background: var(--amber-dim);
+  }
+  .pin-l1{ left: -14px; top: 28px; width: 14px; height: 2px; }
+  .pin-l2{ left: -14px; top: 70px; width: 14px; height: 2px; }
+  .pin-l3{ left: -14px; top: 112px; width: 14px; height: 2px; }
+  .pin-r1{ right: -14px; top: 28px; width: 14px; height: 2px; }
+  .pin-r2{ right: -14px; top: 70px; width: 14px; height: 2px; }
+  .pin-r3{ right: -14px; top: 112px; width: 14px; height: 2px; }
+
+  /* ---------- SECTIONS ---------- */
+  section.section{
+    padding: 56px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  section.section:last-of-type{ border-bottom: none; }
+
+  .section-grid{
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 0 22px;
+  }
+  .marker{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .node{
+    width: 11px; height: 11px;
+    border-radius: 50%;
+    background: var(--amber);
+    box-shadow: 0 0 0 4px rgba(232,163,61,0.14);
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+  .trace{
+    width: 2px;
+    flex: 1;
+    margin-top: 4px;
+    background: linear-gradient(to bottom, var(--border), var(--border));
+  }
+
+  .section-content{ min-width: 0; }
+  .section-label{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin: 0 0 8px;
+  }
+  .section-content h2{
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 26px;
+    margin: 0 0 22px;
+  }
+
+  /* fade-in on scroll */
+  .reveal{
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .reveal.visible{ opacity: 1; transform: translateY(0); }
+
+  /* ---------- CARDS (experience / projects) ---------- */
+  .card{
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 22px 24px;
+    margin-bottom: 18px;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+  .card:hover{
+    border-color: var(--amber-dim);
+    transform: translateY(-2px);
+  }
+  .card:last-child{ margin-bottom: 0; }
+  .card-head{
+    display: flex; justify-content: space-between; align-items: baseline;
+    flex-wrap: wrap; gap: 8px;
+    margin-bottom: 4px;
+  }
+  .card-title{
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    color: var(--text);
+  }
+  .card-date{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .card-org{
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+  .card ul{
+    margin: 0; padding-left: 20px;
+    color: var(--text);
+    font-size: 14.5px;
+  }
+  .card li{ margin-bottom: 6px; }
+  .card li:last-child{ margin-bottom: 0; }
+
+  .tag-row{
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin-top: 14px;
+  }
+  .tag{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--teal);
+    border: 1px solid rgba(79,179,169,0.35);
+    border-radius: 3px;
+    padding: 3px 8px;
+  }
+
+  /* ---------- SKILLS ---------- */
+  .skill-group{ margin-bottom: 20px; }
+  .skill-group:last-child{ margin-bottom: 0; }
+  .skill-group-title{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 10px;
+  }
+  .skill-chips{ display: flex; flex-wrap: wrap; gap: 8px; }
+  .skill-chip{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--text);
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 6px 11px;
+  }
+
+  /* ---------- EDUCATION ---------- */
+  .edu-item{ margin-bottom: 20px; }
+  .edu-item:last-child{ margin-bottom: 0; }
+  .edu-degree{
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+  }
+  .edu-meta{
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: 2px;
+  }
+  .edu-gpa{
+    display: inline-block;
+    margin-top: 6px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    color: var(--amber);
+  }
+
+  /* ---------- FOOTER / CONTACT ---------- */
+  footer.contact{
+    padding: 60px 0 50px;
+    text-align: center;
+  }
+  footer.contact h2{
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 28px;
+    margin: 0 0 12px;
+  }
+  footer.contact p{
+    color: var(--muted);
+    max-width: 460px;
+    margin: 0 auto 28px;
+  }
+  footer .btn-row{ justify-content: center; }
+  footer .fineprint{
+    margin-top: 40px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="nav-mark">HV<span>.</span></div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero">
+    <svg class="hero-schematic" viewBox="0 0 480 480" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M40 60 H180 V140 H320" stroke="#E8A33D" stroke-width="2"/>
+      <path d="M60 200 H200 V260" stroke="#4FB3A9" stroke-width="2"/>
+      <path d="M260 40 V120 H420" stroke="#E8A33D" stroke-width="2"/>
+      <path d="M120 320 H260 V400 H400" stroke="#4FB3A9" stroke-width="2"/>
+      <rect x="180" y="140" width="80" height="60" rx="4" stroke="#E8A33D" stroke-width="2"/>
+      <circle cx="40" cy="60" r="5" fill="#E8A33D"/>
+      <circle cx="320" cy="140" r="5" fill="#E8A33D"/>
+      <circle cx="60" cy="200" r="5" fill="#4FB3A9"/>
+      <circle cx="200" cy="260" r="5" fill="#4FB3A9"/>
+      <circle cx="420" cy="120" r="5" fill="#E8A33D"/>
+      <circle cx="400" cy="400" r="5" fill="#4FB3A9"/>
+    </svg>
+
+    <div class="wrap hero-inner">
+      <div>
+        <p class="eyebrow">Software Developer · Backend</p>
+        <h1>Harshita Vadlamudi</h1>
+        <p class="role">building scalable backend systems<span class="caret" aria-hidden="true"></span></p>
+        <p class="lede">I'm a graduate student in Information Systems at Central Michigan University, working mainly in Java and Python with a growing focus on cloud-ready applications. My background started in Electronics and Instrumentation Engineering — probably why I like systems that are well-structured from the ground up.</p>
+
+        <div class="chip-row">
+          <span class="contact-chip">📍 Michigan, MI</span>
+          <span class="contact-chip">✉ <a href="mailto:harshitavadlamudi39@gmail.com">harshitavadlamudi39@gmail.com</a></span>
+          <span class="contact-chip">🔗 <a href="https://linkedin.com/in/harshita-vadlamudi-958a25337" target="_blank" rel="noopener">LinkedIn</a></span>
+        </div>
+
+        <div class="btn-row">
+          <a class="btn solid" href="mailto:harshitavadlamudi39@gmail.com">Email me</a>
+          <a class="btn" href="resume.pdf" target="_blank" rel="noopener">Download résumé</a>
+        </div>
+      </div>
+
+      <div class="hero-chip" aria-hidden="true">
+        <span class="pin pin-l1"></span><span class="pin pin-l2"></span><span class="pin pin-l3"></span>
+        <span class="pin pin-r1"></span><span class="pin pin-r2"></span><span class="pin pin-r3"></span>
+        <span>HV</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="experience">
+    <div class="wrap section-grid">
+      <div class="marker"><span class="node"></span><span class="trace"></span></div>
+      <div class="section-content reveal">
+        <p class="section-label">Experience</p>
+        <h2>Where I've worked</h2>
+
+        <div class="card">
+          <div class="card-head">
+            <span class="card-title">Java Developer Intern</span>
+            <span class="card-date">May 2023 – Jun 2023</span>
+          </div>
+          <div class="card-org">Fratello InnoTech Pvt Ltd · Hyderabad</div>
+          <ul>
+            <li>Built an online voting system in Java, applying core object-oriented design principles</li>
+            <li>Implemented authentication, vote validation, and the backend business logic behind it</li>
+            <li>Debugged and resolved application issues to improve overall reliability</li>
+            <li>Worked alongside the team on SDLC practices and code quality standards</li>
+            <li>Used version control and kept documentation current throughout development</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <span class="card-title">Graduate Research & Development — AI & Cloud Initiatives</span>
+            <span class="card-date">Jan 2025 – Aug 2025</span>
+          </div>
+          <div class="card-org">Central Michigan University</div>
+          <ul>
+            <li>Exploring LLM-based tools for automated data insights</li>
+            <li>Studying generative AI frameworks and prompt engineering</li>
+            <li>Writing Python automation scripts to streamline workflows</li>
+            <li>Building cloud-ready applications following AWS best practices</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <div class="wrap section-grid">
+      <div class="marker"><span class="node"></span><span class="trace"></span></div>
+      <div class="section-content reveal">
+        <p class="section-label">Projects</p>
+        <h2>Things I've built</h2>
+
+        <div class="card">
+          <div class="card-head">
+            <span class="card-title">AI-Enhanced Data Dashboard</span>
+          </div>
+          <ul>
+            <li>Built a dashboard to visualize structured datasets and surface insights</li>
+            <li>Used Python to clean and transform raw data before visualization</li>
+            <li>Applied visualization best practices to keep dashboards interactive and readable</li>
+            <li>Explored AI-generated summaries to support faster decision-making</li>
+          </ul>
+          <div class="tag-row">
+            <span class="tag">Python</span><span class="tag">Tableau</span><span class="tag">Data Analytics</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <span class="card-title">Online Voting System</span>
+          </div>
+          <ul>
+            <li>Built a secure voting platform in Java using object-oriented design</li>
+            <li>Implemented authentication and vote-validation workflows</li>
+            <li>Tested and debugged to ensure accuracy and reliability</li>
+          </ul>
+          <div class="tag-row">
+            <span class="tag">Java</span><span class="tag">OOP</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <span class="card-title">IT Asset Management System</span>
+          </div>
+          <ul>
+            <li>Designed a backend system to track organizational IT assets</li>
+            <li>Modeled data with SQL for efficient, structured asset management</li>
+            <li>Applied modular design principles for long-term maintainability</li>
+          </ul>
+          <div class="tag-row">
+            <span class="tag">Java</span><span class="tag">SQL</span><span class="tag">AWS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="skills">
+    <div class="wrap section-grid">
+      <div class="marker"><span class="node"></span><span class="trace"></span></div>
+      <div class="section-content reveal">
+        <p class="section-label">Skills</p>
+        <h2>What I work with</h2>
+
+        <div class="skill-group">
+          <p class="skill-group-title">Languages</p>
+          <div class="skill-chips">
+            <span class="skill-chip">Java</span><span class="skill-chip">Python</span><span class="skill-chip">C</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <p class="skill-group-title">Backend</p>
+          <div class="skill-chips">
+            <span class="skill-chip">OOP</span><span class="skill-chip">Data Structures & Algorithms</span><span class="skill-chip">REST APIs</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <p class="skill-group-title">Frameworks (learning)</p>
+          <div class="skill-chips">
+            <span class="skill-chip">Spring Framework</span><span class="skill-chip">Spring Boot</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <p class="skill-group-title">Databases</p>
+          <div class="skill-chips">
+            <span class="skill-chip">SQL</span><span class="skill-chip">MySQL</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <p class="skill-group-title">Cloud</p>
+          <div class="skill-chips">
+            <span class="skill-chip">AWS — EC2</span><span class="skill-chip">AWS — S3</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <p class="skill-group-title">Tools & Version Control</p>
+          <div class="skill-chips">
+            <span class="skill-chip">Git</span><span class="skill-chip">GitHub</span><span class="skill-chip">VS Code</span><span class="skill-chip">Linux</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="education">
+    <div class="wrap section-grid">
+      <div class="marker"><span class="node"></span></div>
+      <div class="section-content reveal">
+        <p class="section-label">Education</p>
+        <h2>Academic background</h2>
+
+        <div class="edu-item">
+          <div class="edu-degree">M.S. in Information Systems</div>
+          <div class="edu-meta">Central Michigan University · 2024 – 2026</div>
+          <span class="edu-gpa">GPA 3.7</span>
+        </div>
+        <div class="edu-item">
+          <div class="edu-degree">B.E. in Electronics and Instrumentation Engineering</div>
+          <div class="edu-meta">Velagapudi Rama Krishna Siddhartha Engineering College · 2020 – 2024</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="contact" id="contact">
+  <div class="wrap">
+    <p class="eyebrow" style="justify-content:center;">Get in touch</p>
+    <h2>Let's talk about an opportunity</h2>
+    <p>I'm looking for software development roles where I can keep growing as a backend engineer. Feel free to reach out.</p>
+    <div class="btn-row">
+      <a class="btn solid" href="mailto:harshitavadlamudi39@gmail.com">Email me</a>
+      <a class="btn" href="https://linkedin.com/in/harshita-vadlamudi-958a25337" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="resume.pdf" target="_blank" rel="noopener">Résumé</a>
+    </div>
+    <p class="fineprint">© 2026 Harshita Vadlamudi · Built with HTML, CSS & JS</p>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(el => observer.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('visible'));
+  }
+</script>
+
+</body>
+</html>
