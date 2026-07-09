@@ -343,6 +343,13 @@
     color: var(--muted);
     white-space: nowrap;
   }
+  .card-link{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    color: var(--teal);
+    white-space: nowrap;
+  }
+  .card-link:hover{ color: var(--amber); }
   .card-org{
     font-size: 14px;
     color: var(--muted);
@@ -473,13 +480,13 @@
 
     <div class="wrap hero-inner">
       <div>
-        <p class="eyebrow">Software Developer · Backend</p>
+        <p class="eyebrow">Full-Stack Java Developer</p>
         <h1>Harshita Vadlamudi</h1>
-        <p class="role">building scalable backend systems<span class="caret" aria-hidden="true"></span></p>
-        <p class="lede">I'm a graduate student in Information Systems at Central Michigan University, working mainly in Java and Python with a growing focus on cloud-ready applications. My background started in Electronics and Instrumentation Engineering — probably why I like systems that are well-structured from the ground up.</p>
+        <p class="role">building full-stack Java applications<span class="caret" aria-hidden="true"></span></p>
+        <p class="lede">Full-stack Java developer with hands-on experience building Spring Boot REST APIs, MySQL-backed data layers, and React.js interfaces — deployed on AWS (EC2, RDS, S3) with Docker and Jenkins CI/CD. M.S. in Information Systems from Central Michigan University, with a foundation in Electronics and Instrumentation Engineering that shapes how I build well-structured systems from the ground up.</p>
 
         <div class="chip-row">
-          <span class="contact-chip">📍 Michigan, MI</span>
+          <span class="contact-chip">📍 Atlanta, GA</span>
           <span class="contact-chip">✉ <a href="mailto:harshitavadlamudi4@gmail.com">harshitavadlamudi4@gmail.com</a></span>
           <span class="contact-chip">🔗 <a href="https://linkedin.com/in/harshita-vadlamudi-958a25337" target="_blank" rel="noopener">LinkedIn</a></span>
         </div>
@@ -507,30 +514,31 @@
 
         <div class="card">
           <div class="card-head">
-            <span class="card-title">Java Developer Intern</span>
-            <span class="card-date">April 2023 – July 2023</span>
+            <span class="card-title">Java Developer</span>
+            <span class="card-date">April 2022 – May 2024</span>
           </div>
-          <div class="card-org">Fratello InnoTech Pvt Ltd · Hyderabad</div>
+          <div class="card-org">Fratello InnoTech Pvt Ltd · Hyderabad, India</div>
           <ul>
-            <li>Built an online voting system in Java, applying core object-oriented design principles</li>
-            <li>Implemented authentication, vote validation, and the backend business logic behind it</li>
-            <li>Debugged and resolved application issues to improve overall reliability</li>
-            <li>Worked alongside the team on SDLC practices and code quality standards</li>
-            <li>Used version control and kept documentation current throughout development</li>
+            <li>Developed and enhanced backend services for the Khrana Eats online food ordering platform using Java, Spring Boot, Spring MVC, and Hibernate — implementing restaurant management, menu catalog, order processing, and customer profile features through RESTful APIs</li>
+            <li>Designed and optimized MySQL database schemas and queries for order, payment, and inventory data, improving retrieval performance and transactional consistency during high-volume order processing</li>
+            <li>Built and integrated responsive interfaces using React.js, JavaScript, HTML5, and CSS3, enabling customers to browse menus, place orders, and track order status while consuming backend REST APIs</li>
+            <li>Deployed and maintained application services on AWS (EC2, RDS, and S3), containerized applications with Docker, and supported Jenkins CI/CD pipelines across development and production environments</li>
+            <li>Implemented Spring Security with JWT-based authentication and wrote unit and integration tests using JUnit and Mockito, participating in code reviews to improve reliability and maintainability</li>
+            <li>Collaborated with product managers, QA engineers, and cross-functional Agile teams throughout the SDLC — from requirement analysis through deployment and production support — resolving critical issues to ensure a seamless ordering experience</li>
           </ul>
         </div>
 
         <div class="card">
           <div class="card-head">
-            <span class="card-title">Graduate Research & Development — AI & Cloud Initiatives</span>
-            <span class="card-date">Jan 2025 – Aug 2025</span>
+            <span class="card-title">Graduate Research Assistant — AI &amp; Cloud Initiatives</span>
+            <span class="card-date">April 2025 – Aug 2025</span>
           </div>
           <div class="card-org">Central Michigan University</div>
           <ul>
-            <li>Exploring LLM-based tools for automated data insights</li>
-            <li>Studying generative AI frameworks and prompt engineering</li>
-            <li>Writing Python automation scripts to streamline workflows</li>
-            <li>Building cloud-ready applications following AWS best practices</li>
+            <li>Integrated multiple REST APIs for automated data retrieval and LLM-based insight generation, applying request/response patterns transferable to Java RESTful services</li>
+            <li>Automated manual, repetitive data-processing steps in research workflows using Python scripts, improving efficiency and reliability</li>
+            <li>Deployed and configured backend components on AWS EC2 and S3, the infrastructure used to host and scale production Java applications</li>
+            <li>Researched and evaluated emerging generative AI frameworks to support backend and data engineering coursework</li>
           </ul>
         </div>
       </div>
@@ -549,10 +557,9 @@
             <span class="card-title">AI-Enhanced Data Dashboard</span>
           </div>
           <ul>
-            <li>Built a dashboard to visualize structured datasets and surface insights</li>
-            <li>Used Python to clean and transform raw data before visualization</li>
-            <li>Applied visualization best practices to keep dashboards interactive and readable</li>
-            <li>Explored AI-generated summaries to support faster decision-making</li>
+            <li>Built an interactive Python/Tableau dashboard to analyze structured datasets and surface actionable insights</li>
+            <li>Cleaned, transformed, and preprocessed raw data with Python scripts prior to visualization</li>
+            <li>Applied data visualization best practices to improve usability and support faster decision-making</li>
           </ul>
           <div class="tag-row">
             <span class="tag">Python</span><span class="tag">Tableau</span><span class="tag">Data Analytics</span>
@@ -564,12 +571,57 @@
             <span class="card-title">Online Voting System</span>
           </div>
           <ul>
-            <li>Built a secure voting platform in Java using object-oriented design</li>
-            <li>Implemented authentication and vote-validation workflows</li>
-            <li>Tested and debugged to ensure accuracy and reliability</li>
+            <li>Built a secure, Java-based voting platform using object-oriented design, with a MySQL backend for voter and ballot records</li>
+            <li>Implemented JDBC-driven authentication and vote-validation workflows to prevent duplicate or unauthorized votes</li>
+            <li>Tested and debugged core modules — registration, authentication, vote casting, tabulation — across multiple user scenarios</li>
           </ul>
           <div class="tag-row">
-            <span class="tag">Java</span><span class="tag">OOP</span>
+            <span class="tag">Java</span><span class="tag">JDBC</span><span class="tag">MySQL</span><span class="tag">OOP</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <span class="card-title">AutoService – Vehicle Service Booking &amp; Management System</span>
+          </div>
+          <ul>
+            <li>Built a desktop vehicle-service booking and management application in Python with separate customer and admin interfaces</li>
+            <li>Developed customer modules for login, multi-step appointment booking, service history, and profile/vehicle management</li>
+            <li>Built an admin dashboard tracking bookings, 85% technician utilization, and revenue, plus a resource management module scheduling 5 technicians across 6 service bays</li>
+            <li>Applied consistent UI/UX patterns across 6 screens for a cohesive interface</li>
+          </ul>
+          <div class="tag-row">
+            <span class="tag">Python</span><span class="tag">CustomTkinter</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <span class="card-title">Overhead Flight Tracker</span>
+            <a class="card-link" href="https://github.com/HarshitaVadlamudi/flight-tracker" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+          <ul>
+            <li>Built a web app displaying real-time overhead aircraft using live ADS-B data from the OpenSky Network REST API</li>
+            <li>Implemented geolocation-based auto-detection and an adjustable search radius (10–150 km) to filter nearby flights</li>
+            <li>Developed flight-phase detection logic (takeoff, climb, cruise, approach, landing) from altitude and vertical-rate data</li>
+          </ul>
+          <div class="tag-row">
+            <span class="tag">JavaScript</span><span class="tag">REST API</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <span class="card-title">Delta Flight Delay Predictor</span>
+            <a class="card-link" href="https://github.com/HarshitaVadlamudi/flight-delay-predictor" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+          <ul>
+            <li>Built a web app predicting Delta flight delay risk by combining live flight data with real-time departure/arrival weather</li>
+            <li>Integrated AviationStack and Open-Meteo REST APIs to compute a Low/Medium/High delay risk score</li>
+            <li>Designed a risk-factor breakdown view explaining how weather conditions contribute to the prediction</li>
+          </ul>
+          <div class="tag-row">
+            <span class="tag">JavaScript</span><span class="tag">REST API</span>
           </div>
         </div>
 
@@ -600,37 +652,31 @@
         <div class="skill-group">
           <p class="skill-group-title">Languages</p>
           <div class="skill-chips">
-            <span class="skill-chip">Java</span><span class="skill-chip">Python</span><span class="skill-chip">C</span>
+            <span class="skill-chip">Java</span><span class="skill-chip">Python</span><span class="skill-chip">SQL</span><span class="skill-chip">HTML</span><span class="skill-chip">CSS</span>
           </div>
         </div>
         <div class="skill-group">
-          <p class="skill-group-title">Backend</p>
+          <p class="skill-group-title">Frameworks & Tech</p>
           <div class="skill-chips">
-            <span class="skill-chip">OOP</span><span class="skill-chip">Data Structures & Algorithms</span><span class="skill-chip">REST APIs</span>
-          </div>
-        </div>
-        <div class="skill-group">
-          <p class="skill-group-title">Frameworks (learning)</p>
-          <div class="skill-chips">
-            <span class="skill-chip">Spring Framework</span><span class="skill-chip">Spring Boot</span>
+            <span class="skill-chip">Spring Boot</span><span class="skill-chip">Spring MVC</span><span class="skill-chip">Spring Security</span><span class="skill-chip">Hibernate</span><span class="skill-chip">JDBC</span><span class="skill-chip">React.js</span><span class="skill-chip">RESTful APIs</span><span class="skill-chip">CustomTkinter</span>
           </div>
         </div>
         <div class="skill-group">
           <p class="skill-group-title">Databases</p>
           <div class="skill-chips">
-            <span class="skill-chip">SQL</span><span class="skill-chip">MySQL</span>
+            <span class="skill-chip">MySQL</span><span class="skill-chip">SQLYOG</span>
           </div>
         </div>
         <div class="skill-group">
-          <p class="skill-group-title">Cloud</p>
+          <p class="skill-group-title">Cloud & APIs</p>
           <div class="skill-chips">
-            <span class="skill-chip">AWS — EC2</span><span class="skill-chip">AWS — S3</span>
+            <span class="skill-chip">AWS — EC2</span><span class="skill-chip">AWS — S3</span><span class="skill-chip">REST API Integration</span><span class="skill-chip">LLM / Prompt Engineering</span>
           </div>
         </div>
         <div class="skill-group">
-          <p class="skill-group-title">Tools & Version Control</p>
+          <p class="skill-group-title">DevOps & Testing</p>
           <div class="skill-chips">
-            <span class="skill-chip">Git</span><span class="skill-chip">GitHub</span><span class="skill-chip">VS Code</span><span class="skill-chip">Linux</span>
+            <span class="skill-chip">Docker</span><span class="skill-chip">Jenkins CI/CD</span><span class="skill-chip">JUnit</span><span class="skill-chip">Mockito</span><span class="skill-chip">Git</span><span class="skill-chip">GitHub</span><span class="skill-chip">Eclipse IDE</span><span class="skill-chip">Apache Tomcat</span>
           </div>
         </div>
       </div>
